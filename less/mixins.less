@@ -9,9 +9,33 @@
 	width: @width;
 	height: @height;
 }
-.square(@size) {
-	.size(@size; @size);
+
+.float(@float) {
+	float: @float;
 }
+
+.margin-size(@marginSpace) {
+	margin-right: @marginSpace;
+}
+
+.background-color(@backgroundColour) {
+	background-color: @backgroundColour;
+}
+
+.animation(@animation) {
+	-webkit-animation: @animation;
+	-o-animation: @animation;
+	animation: @animation;
+}
+
+.animation-delay(@animation-delay) {
+	animation-delay: @animation-delay;
+	-o-animation-delay: @animation-delay;
+	-ms-animation-delay: @animation-delay;
+	-moz-animation-delay: @animation-delay;
+	-webkit-animation-delay: @animation-delay;
+}
+
 .border-top-radius(@radius) {
 	border-top-right-radius: @radius;
 	border-top-left-radius: @radius;
@@ -32,11 +56,6 @@
 
 // Vendor Prefixes
 
-.animation(@animation) {
-	-webkit-animation: @animation;
-	-o-animation: @animation;
-	animation: @animation;
-}
 .box-sizing(@boxmodel) {
 	-webkit-box-sizing: @boxmodel;
 	-moz-box-sizing: @boxmodel;

@@ -683,16 +683,6 @@ var Select = React.createClass({
 				// down
 				this.focusNextOption();
 				break;
-			case 188:
-				// ,
-				if (this.props.allowCreate && this.props.multi) {
-					event.preventDefault();
-					event.stopPropagation();
-					this.selectFocusedOption();
-				} else {
-					return;
-				}
-				break;
 			default:
 				return;
 		}
@@ -1039,7 +1029,13 @@ var Select = React.createClass({
 		var loading = this.isLoading() ? React.createElement(
 			'span',
 			{ className: 'Select-loading-zone', 'aria-hidden': 'true' },
-			React.createElement('span', { className: 'Select-loading' })
+			React.createElement(
+				'span',
+				{ className: 'Select-loading' },
+				React.createElement('span', { className: 'dots' }),
+				React.createElement('span', { className: 'dots' }),
+				React.createElement('span', { className: 'dots' })
+			)
 		) : null;
 
 		// clear "x" button
