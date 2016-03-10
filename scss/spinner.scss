@@ -3,22 +3,92 @@
 // ------------------------------
 @import 'mixins';
 
-@mixin Select-spinner($size, $orbit, $satellite)
+@mixin dots-loading($size, $float, $marginSpace, $backgroundColour)
 {
-	@include animation( Select-animation-spin 400ms infinite linear );
-	@include square($size);
-	box-sizing: border-box;
-	border-radius: 50%;
-	border: floor(($size / 8)) solid $orbit;
-	border-right-color: $satellite;
-	display: inline-block;
-	position: relative;
 
+ width: $size;
+ height: $size;
+ float: $float;
+ margin-right: $marginSpace;
+ background-color: darken($backgroundColour, 50%);
 }
 
-@keyframes Select-animation-spin {
-	to { transform: rotate(1turn); }
+@keyframes dots-loader {
+ 0% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 24% {
+   opacity: 1;
+   @include transform(scale(1.2,1.2));
+ }
+ 48% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 100% {}
 }
-@-webkit-keyframes Select-animation-spin {
-	to { -webkit-transform: rotate(1turn); }
+
+@-o-keyframes dots-loader {
+ 0% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 24% {
+   opacity: 1;
+   @include transform(scale(1.2,1.2));
+ }
+ 48% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 100% {}
+}
+
+@-ms-keyframes dots-loader {
+ 0% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 24% {
+   opacity: 1;
+   @include transform(scale(1.2,1.2));
+ }
+ 48% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 100% {}
+}
+
+@-moz-keyframes dots-loader {
+ 0% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 24% {
+   opacity: 1;
+   @include transform(scale(1.2,1.2));
+ }
+ 48% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 100% {}
+}
+
+@-webkit-keyframes dots-loader {
+ 0% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 24% {
+   opacity: 1;
+   @include transform(scale(1.2,1.2));
+ }
+ 48% {
+   opacity: .15;
+   @include transform(scale(1,1));
+ }
+ 100% {}
 }

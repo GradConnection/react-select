@@ -828,7 +828,11 @@ var Select = React.createClass({
 		// loading spinner
 		var loading = this.isLoading() ? (
 			<span className="Select-loading-zone" aria-hidden="true">
-				<span className="Select-loading" />
+				<span className="Select-loading">
+					<span className="dots" />
+					<span className="dots" />
+					<span className="dots" />
+				</span>
 			</span>
 		) : null;
 

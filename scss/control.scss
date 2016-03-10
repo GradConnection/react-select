@@ -166,11 +166,53 @@
 	vertical-align: middle;
 	width: $select-loading-size;
 }
-.Select-loading {
-	@include Select-spinner($select-loading-size, $select-loading-color-bg, $select-loading-color);
-	vertical-align: middle;
-}
+// .Select-loading {
+// 	@include Select-spinner($select-loading-size, $select-loading-color-bg, $select-loading-color);
+// 	vertical-align: middle;
+// }
 
+.Select-loading {
+ position: relative;
+ max-width: 50%;
+ vertical-align: middle;
+
+ &:after {
+   content: '';
+   position: absolute;
+   display: block;
+   clear: both;
+ }
+
+ .dots {
+   @include dots-loading($size, $float, $marginSpace, $backgroundColour);
+   display: block;
+   @include opacity(0);
+   @include border-radius(50%);
+   @include transform-origin(center center);
+
+   animation: dots-loader 1.2s infinite;
+   -o-animation: dots-loader 1.2s infinite;
+   -ms-animation: dots-loader 1.2s infinite;
+   -moz-animation: dots-loader 1.2s infinite;
+   -webkit-animation: dots-loader 1.2s infinite;
+
+   &:nth-child(2) {
+     animation-delay: 0.12s;
+     --o-animation-delay: 0.12s;
+     -ms-animation-delay: 0.12s;
+     -moz-animation-delay: 0.12s;
+     -webkit-animation-delay: 0.12s;
+   }
+   &:nth-child(3) {
+     animation-delay: 0.24s;
+     -o-animation-delay: 0.24s;
+     -ms-animation-delay: 0.24s;
+     -moz-animation-delay: 0.24s;
+     -webkit-animation-delay: 0.24s;
+   }
+
+ }
+}
 
 // the little cross that clears the field
 
